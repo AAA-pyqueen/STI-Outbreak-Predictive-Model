@@ -1,4 +1,8 @@
+PyYAML
+requests
 streamlit
+streamlit-folium
+geopandas
 pandas
 numpy
 tensorflow
@@ -6,6 +10,4 @@ scikit-learn
 matplotlib
 plotly
 folium
-streamlit-folium
-geopandas
-requests
+
