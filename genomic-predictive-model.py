@@ -54,14 +54,15 @@ def preprocess_data(data):
     
     return train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
-# Define TensorFlow model
+# TensorFlow model with Adam optimizer
 def build_model(input_shape):
     model = keras.Sequential([
         keras.layers.Dense(128, activation='relu', input_shape=(input_shape,)),
         keras.layers.Dense(64, activation='relu'),
         keras.layers.Dense(1, activation='sigmoid')
     ])
-    
+
+    optimizer = keras.optimizers.Adam(learning_rate=0.001)
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     return model
 
