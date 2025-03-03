@@ -13,19 +13,19 @@ with open("encrypted_api.key", "rb") as encrypted_file:
 
 NCBI_API_KEY = cipher.decrypt(encrypted_api_key).decode()
 
-# 🌍 Default Map Settings
+# Default Map Settings - set to Central US
 DEFAULT_LATITUDE = 39.8283
 DEFAULT_LONGITUDE = -98.5795
 DEFAULT_ZOOM_LEVEL = 4
 
-# 📊 Model Settings
+# h5 Model Settings
 MODEL_PATH = "saved_model/infectious_disease_model.h5"
 BATCH_SIZE = 32
 EPOCHS = 50
 LEARNING_RATE = 0.001
 
-# 📝 File Paths
+# Feedback File Path
 FEEDBACK_LOG = "feedback_log.txt"
 
-# ⚠️ Debug Mode
+# Debug Mode
 DEBUG_MODE = True
