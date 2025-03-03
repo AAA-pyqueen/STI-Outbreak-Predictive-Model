@@ -121,6 +121,8 @@ elif app_mode == "📝 User Feedback":
 
         st.success("✅ Thank you for your feedback!")
 
+st.markdown("<style>{}</style>".format(open("style.css").read()), unsafe_allow_html=True)
+
 # Footer
 st.markdown("---")
 st.caption("Developed by Aquesha Addison | Powered by TensorFlow & Streamlit")
