@@ -23,6 +23,8 @@ MODEL_PATH = "saved_model/infectious_disease_model.h5"
 BATCH_SIZE = 32
 EPOCHS = 50
 LEARNING_RATE = 0.001
+TEST_SIZE = 0.2
+RANDOM_STATE = 42
 
 # Feedback File Path
 FEEDBACK_LOG = "feedback_log.txt"
