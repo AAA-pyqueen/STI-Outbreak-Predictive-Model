@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 import matplotlib.pyplot as plt
 import requests
 
-# Function to fetch genomic and metadata from NCBI Datasets API
+# Update Function for NCBI Open API 3/3/25!!
 def fetch_ncbi_data():
     base_url = "https://api.ncbi.nlm.nih.gov/datasets/v1/genome/accession/"
     pathogens = ["Syphilis", "HPV", "HSV", "HIV"]
@@ -71,7 +71,12 @@ def train_and_evaluate():
     X_train, X_test, y_train, y_test = preprocess_data(data)
     
     model = build_model(X_train.shape[1])
-    model.fit(X_train, y_train, epochs=50, batch_size=32, validation_data=(X_test, y_test))
+    
+    # Set default parameters for training
+    epochs = 50
+    batch_size = 32
+    
+    model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(X_test, y_test))
     
     # Predictions
     y_pred = (model.predict(X_test) > 0.5).astype(int)
@@ -97,3 +102,4 @@ def train_and_evaluate():
 
 if __name__ == '__main__':
     train_and_evaluate()
+
